@@ -1,0 +1,141 @@
+.prize-section {
+    background: radial-gradient(circle at center, #111 0%, #000 70%);
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+.vault-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 10px;
+    background: linear-gradient(45deg, #111, #000);
+    border: 1px solid #333;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Vault Border Effects */
+.vault-container::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), transparent);
+    z-index: -1;
+    animation: borderRotate 4s linear infinite;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.vault-door {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 60px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Honeycomb Background Pattern */
+.vault-door::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#222 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.vault-lock {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.lock-circle {
+    position: absolute;
+    inset: -5px;
+    border: 1px dashed var(--color-secondary);
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+}
+
+.lock-icon {
+    font-size: 2rem;
+}
+
+.vault-content {
+    position: relative;
+    z-index: 2;
+}
+
+.prize-reveal-text {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-primary);
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.prize-note {
+    font-size: 1.2rem;
+    color: var(--color-text-dim);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.vault-status {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: rgba(255, 69, 0, 0.1);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes borderRotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .prize-reveal-text {
+        font-size: 2rem;
+        -webkit-text-stroke: 0px;
+        color: var(--color-primary);
+    }
+}

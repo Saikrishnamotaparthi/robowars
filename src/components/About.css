@@ -1,0 +1,185 @@
+/* About Section Base */
+.about-section {
+    background-color: #050505;
+    position: relative;
+    padding: 100px 0;
+}
+
+.about-panel {
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid #333;
+    padding: 40px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+/* Panel Frame Effects */
+.about-panel::before,
+.about-panel::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-primary);
+    transition: all 0.5s ease;
+}
+
+.about-panel::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.about-panel::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.about-panel:hover::before,
+.about-panel:hover::after {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background: var(--color-primary);
+}
+
+/* Header */
+.panel-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.panel-id {
+    font-family: var(--font-display);
+    color: var(--color-secondary);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.panel-decor-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-secondary), transparent);
+    margin-left: 15px;
+}
+
+/* Content */
+.about-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+}
+
+.highlight {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.separator-line {
+    width: 100px;
+    height: 2px;
+    background: var(--color-secondary);
+    margin: 20px auto;
+}
+
+/* Tech Stats Grid */
+.tech-stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.tech-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.tech-stat-item::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 1px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tech-stat-item:hover::before {
+    transform: scaleX(1);
+}
+
+.stat-val {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+}
+
+.stat-lbl {
+    font-size: 0.8rem;
+    color: var(--color-text-dim);
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* Footer */
+.panel-footer {
+    margin-top: 30px;
+    text-align: right;
+    border-top: 1px solid #222;
+    padding-top: 10px;
+}
+
+.status-indicator {
+    font-size: 0.7rem;
+    color: #00ff00;
+    /* Standard "System OK" green */
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+.status-indicator::before {
+    content: '● ';
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    .about-panel {
+        padding: 20px;
+    }
+
+    .tech-stats-grid {
+        gap: 15px;
+    }
+
+    .tech-stat-item {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+}

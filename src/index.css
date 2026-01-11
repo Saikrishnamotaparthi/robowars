@@ -1,0 +1,107 @@
+:root {
+  --color-bg: #000000;
+  --color-surface: #0a0a0a;
+
+  /* Fire Red & Gold Palette */
+  --color-primary: #FFD700;
+  /* Gold */
+  --color-primary-dim: #C5A000;
+  --color-secondary: #FF4500;
+  /* Orange-Red / Fire */
+  --color-secondary-dim: #cc3700;
+
+  --color-text: #ffffff;
+  --color-text-dim: #b0b0b0;
+
+  --font-main: 'Inter', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, #FFD700 10%, #FFA500 100%);
+  --gradient-fire: linear-gradient(to bottom, #FF4500, #8B0000);
+
+  /* Glows */
+  --glow-gold: 0 0 20px rgba(255, 215, 0, 0.5);
+  --glow-fire: 0 0 20px rgba(255, 69, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+button {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Base Utility Classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #fff;
+  text-shadow: var(--glow-gold);
+  letter-spacing: 2px;
+}
+
+/* Scroll Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#FFD700, #FF4500);
+  border-radius: 4px;
+}

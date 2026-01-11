@@ -1,0 +1,373 @@
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    background: #000;
+}
+
+.video-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.95) 100%);
+    z-index: 1;
+}
+
+/* HUD Overlay Styles */
+.hud-overlay {
+    position: absolute;
+    inset: 20px;
+    pointer-events: none;
+    z-index: 2;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.hud-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 215, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 215, 0, 0.05) 1px, transparent 1px);
+    background-size: 100px 100px;
+    mask-image: radial-gradient(circle, transparent 30%, black 100%);
+}
+
+.hud-corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-primary);
+    opacity: 0.8;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.hud-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: var(--color-secondary);
+}
+
+.hud-line.top {
+    top: 0;
+}
+
+.hud-line.bottom {
+    bottom: 0;
+}
+
+/* Content Styles */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.hero-status {
+    font-family: monospace;
+    color: var(--color-secondary);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff00;
+    animation: blink 1s infinite alternate;
+}
+
+.hero-text-logo {
+    max-width: 1000px;
+    width: 95%;
+    filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.4));
+    animation: float 6s ease-in-out infinite;
+}
+
+.mission-brief {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brief-line {
+    width: 50px;
+    height: 1px;
+    background: #444;
+}
+
+.event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid var(--color-primary);
+    padding: 10px 40px;
+    backdrop-filter: blur(5px);
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+.date-label {
+    font-size: 0.7rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+.date-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    letter-spacing: 3px;
+}
+
+/* New CTA Button */
+.cta-button {
+    margin-top: 20px;
+    padding: 18px 50px;
+    background: transparent;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    transition: all 0.3s ease;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-secondary);
+    opacity: 0.1;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+.cta-button:hover::before {
+    opacity: 1;
+}
+
+.cta-decor {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+/* Scroll Arrow Styles - Retained */
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.desktop-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.mobile-indicator {
+    display: none;
+}
+
+.scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 3px solid var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+    transform: rotate(45deg);
+}
+
+.scroll-arrow:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.scroll-arrow:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(5px);
+    }
+}
+
+@keyframes bounce-mobile {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(10px);
+    }
+
+    60% {
+        transform: translateY(5px);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 100vh;
+        min-height: auto;
+        padding-top: 0;
+    }
+
+    .hud-overlay {
+        inset: 10px;
+        /* Tighter HUD on mobile */
+    }
+
+    .hero-content {
+        gap: 15px;
+        width: 100%;
+        padding: 0 15px;
+        transform: translateY(-8vh);
+        /* Keep upward shift */
+    }
+
+    .brief-line {
+        width: 30px;
+    }
+
+    .date-value {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .desktop-indicator {
+        display: none;
+    }
+
+    .mobile-indicator {
+        display: flex;
+        margin-top: 25px;
+        animation: bounce-mobile 2s infinite;
+    }
+}

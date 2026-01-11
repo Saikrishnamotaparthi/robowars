@@ -20,10 +20,10 @@ const Footer = () => {
                     <div className="footer-contact">
                         <h4>CONTACT US</h4>
                         <div className="contact-item">
-                            <span>Email:</span> <a href="mailto:pramana@gitam.edu">pramana@gitam.edu</a>
+                            <span>Email:</span> <a href="mailto:pramana.hyd@gitam.edu">pramana.hyd@gitam.edu</a>
                         </div>
                         <div className="contact-item">
-                            <span>Phone:</span> <a href="tel:+919876543210">+91 98765 43210</a>
+                            <span>Phone:</span> <a href="tel:+918121286794">+91 81212 86794</a>
                         </div>
                     </div>
 

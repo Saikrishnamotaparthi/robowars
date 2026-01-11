@@ -26,8 +26,8 @@ const Contact = () => {
                             <h3>EVENT INQUIRIES</h3>
                             <div className="tech-divider"></div>
                             <p className="highlight-text">Koushik</p>
-                            <a href="tel:+919876543210" className="comms-link">+91 81212 86794</a>
-                            <a href="mailto:pramana@gitam.edu" className="comms-link">pramana.hyd@gitam.edu</a>
+                            <a href="tel:+918121286794" className="comms-link">+91 81212 86794</a>
+                            <a href="mailto:pramana.hyd@gitam.edu" className="comms-link">pramana.hyd@gitam.edu</a>
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@ const Contact = () => {
                             <h3>TECH SUPPORT</h3>
                             <div className="tech-divider"></div>
                             <p className="highlight-text">Harsha</p>
-                            <a href="tel:+919123456789" className="comms-link">+91 89770 17599</a>
+                            <a href="tel:+918977017599" className="comms-link">+91 89770 17599</a>
                             <a href="mailto:gelectra@gitam.edu" className="comms-link">gelectra@gitam.edu</a>
                             <div className="signal-bars">
                                 <span className="bar"></span><span className="bar"></span><span className="bar"></span>

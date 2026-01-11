@@ -345,7 +345,15 @@
         width: 100%;
         padding: 0 15px;
         transform: translateY(-8vh);
-        /* Keep upward shift */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-status,
+    .mission-brief {
+        justify-content: center;
+        width: 100%;
     }
 
     .brief-line {

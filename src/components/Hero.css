@@ -337,36 +337,56 @@
 
     .hud-overlay {
         inset: 10px;
-        /* Tighter HUD on mobile */
     }
 
     .hero-content {
-        gap: 15px;
+        gap: 20px;
         width: 100%;
-        padding: 0 15px;
-        transform: translateY(-8vh);
+        padding: 0 10px;
+        /* Removing negative transform to let flexbox center it naturally */
+        transform: translateY(0);
         align-items: center;
         justify-content: center;
         text-align: center;
+        height: 100%;
+        /* Ensure full height for centering */
     }
 
-    .hero-status,
+    .hero-status {
+        justify-content: center;
+        width: 100%;
+        font-size: 0.7rem;
+        /* Reduced size */
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+
+    .hero-text-logo {
+        width: 90%;
+        margin: 0 auto;
+        /* Ensure centering */
+        /* Increased brightness/drop-shadow for "highlighting" */
+        filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.6)) brightness(1.2);
+    }
+
     .mission-brief {
         justify-content: center;
         width: 100%;
+        gap: 10px;
     }
 
     .brief-line {
-        width: 30px;
+        width: 20px;
     }
 
     .date-value {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .cta-button {
         padding: 12px 30px;
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-top: 10px;
     }
 
     .desktop-indicator {
@@ -375,7 +395,7 @@
 
     .mobile-indicator {
         display: flex;
-        margin-top: 25px;
+        margin-top: 20px;
         animation: bounce-mobile 2s infinite;
     }
 }
